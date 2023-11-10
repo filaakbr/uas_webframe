@@ -13,20 +13,22 @@ use App\Http\Controllers\HalamanController;
 |
 */
 
-
-
 Route::prefix('mahasiswa')->group(function () {
    
     Route::get('/pendaftaran', function () {
-        return "Ini Adalah Halaman Pendaftaran"; 
+        return view("pendaftaran"); 
     })->name('home');
     Route::get('/ujian', function () {
-        return "Ini Adalah Halaman Ujian"; 
+        return view("ujian"); 
     })->name('home');
     Route::get('/nilai', function () {
-        return "Ini Adalah Halaman Nilai"; 
+        return view("nilai"); 
+    })->name('home');
+    Route::get('/viewkrs', function () {
+        return view("viewkrs"); 
     })->name('home');
    
 });
+
 
 //Jawaban Soal 1
