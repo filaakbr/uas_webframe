@@ -13,28 +13,20 @@ use App\Http\Controllers\HalamanController;
 |
 */
 
+
+
 Route::prefix('mahasiswa')->group(function () {
-    Route::get('/mahasiswa', function () {
-        // Matches The "/admin/users" URL
-    });
-});
-
-Route::name('mahasiswa.')->group(function () {
+   
     Route::get('/pendaftaran', function () {
-        // Route assigned name "admin.users"...
-    })->name('mahasiswa');
-});
-
-Route::name('mahasiswa.')->group(function () {
+        return "Ini Adalah Halaman Pendaftaran"; 
+    })->name('home');
     Route::get('/ujian', function () {
-        // Route assigned name "admin.users"...
-    })->name('mahasiswa');
-});
-
-Route::name('mahasiswa.')->group(function () {
+        return "Ini Adalah Halaman Ujian"; 
+    })->name('home');
     Route::get('/nilai', function () {
-        // Route assigned name "admin.users"...
-    })->name('mahasiswa');
+        return "Ini Adalah Halaman Nilai"; 
+    })->name('home');
+   
 });
 
 //Jawaban Soal 1
