@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link text-white" href="/dosen/v_profil">Profil</a>
+            <a class="nav-link text-white" href="/dosen/profile">Profil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="/dosen/v_ampu">Data Matkul</a>
+            <a class="nav-link text-white" href="/dosen/data_pengampu">Data Matkul</a>
           </li>
           </li>
         </ul>

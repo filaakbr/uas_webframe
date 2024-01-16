@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('content')
-    <h1>DATA MATA KULIAH YANG DIAMPU</h1>
+    <h1>DATA DOSEN</h1>
 
     <style>
         table {
@@ -18,17 +18,25 @@
     <table>
         <thead>
             <tr>
-                <th>Nama</th>
-                <th>Pengampu Matakuliah</th>
-                <th>SKS</th>
+                <th>NIP</th>
+                <th>NAMA DOSEN</th>
+                <th>FOTO DOSEN</th>
             </tr>
         </thead>
         <tbody>
+            @foreach ($dosens as $dosen)
             <tr>
-                <td>Samsul Arifin</td>
-                <td>Web Server</td>
-                <td>2</td>
+                <td>{{ $dosen->nip }}</td>
+                <td>{{ $dosen->nama_dosen }}</td>
+                <td>
+                    @if ($dosen->foto_dosen)
+            <img src="{{ asset('project/img/' . $dosen->foto_dosen) }}" alt="Foto Dosen" style="max-width: 100px;">
+        @else
+            <p>Foto Kosong</p>
+        @endif
+                </td>
             </tr>
+            @endforeach
             <!-- Add more <tr> elements for additional rows if needed -->
         </tbody>
     </table>

@@ -21,25 +21,22 @@ use App\Models\Krs;
 |
 */
 
-Route::get('/', function () {
-    return view('mahasiswa');
-});
+Route::get('/', [ProfileController::class, 'index']);
 
-Route::get('/v_ampu', [KRSController::class, 'index']);
+Route::get('/viewkrs', [KRSController::class, 'index']);
 
 Route::get('/datamahasiswa', [DataMahasiswaController::class, 'index'])->name('mahasiswa.index');
 Route::get('/datamahasiswa/{nim}/krs', [DataMahasiswaController::class, 'showKrs'])->name('mahasiswa.krs');
 
-Route::prefix('dosen')->group(function () {
-    // Route untuk halaman admin/users tanpa menggunakan controller
-    Route::get('/v_profil', function () {
-        return view('v_profil'); // Sesuaikan dengan respons atau tampilan yang diinginkan
-    })->name('home');
+Route::prefix('dosen')->group(function () {     
+    Route::get('/profile', function () {
+        return view('v_profile'); 
+    })->name('profile');
     Route::get('/data_pengampu', function () {
-        return view('v_ampu'); // Sesuaikan dengan respons atau tampilan yang diinginkan
-    })->name('home');
-    // Tambahkan rute lainnya yang mungkin Anda butuhkan di sini
+        return view('v_ampu'); 
+    })->name('pengampu');
 });
+
 
 
 //Jawaban Soal 1
